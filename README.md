@@ -7,9 +7,7 @@ I took the base code from
 
 It was generating blank panels after certain point when dashboard is tall. This repo code addresses this issue.
 
-## Automated PDF export of Grafana dashboard using Puppeteer
-
-### Prerequisites
+## Prerequisites
 
 General:
 - Grafana server with dashboards that are to be exported, and datasources in "Server" (proxy) mode.
@@ -26,9 +24,11 @@ sudo apt-get install gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcup
 Scripts:
 - The [grafana_pdf.js](https://gist.githubusercontent.com/svet-b/1ad0656cd3ce0e1a633e16eb20f66425/raw/grafana_pdf.js) file attached here, which carries out the PDF conversion using Puppeteer
 
+## Usage
+
 ### You can directly run this command by passing all the params
 
-``` sh
+```sh
 node grafana_pdf.js "http://localhost:3000/d/7ps_KoFMk?orgId=1&from=1602513421982&to=1602513601734" token output/grafana_dash.pdf
 
 node grafana_pdf.js "http://localhost:3000/d/VyLxLpNnk/first?orgId=1" token output/grafana_dash.pdf
@@ -38,7 +38,7 @@ node grafana_pdf.js "http://localhost:3000/d/VyLxLpNnk/first?orgId=1" token outp
 
 Environment: Set the Grafana server URL, username, and password, and the output filename as environment variables.
 
-``` sh
+```sh
 export GF_DASH_URL="http://localhost:3000/d/x3g4Wx5ik/new-dashboard?kiosk"
 export GF_TOKEN=frqcfqsdf45fqsdfq1vdfq2dqxfq3ht
 export OUTPUT_PDF=output/output.pdf
